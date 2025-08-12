@@ -1,0 +1,72 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.post {
+    border: 1px solid #e0e0e0;    /* Тонкая серая обводка */
+    border-radius: 12px;          /* Закругление углов */
+    padding: 20px;               /* Отступы внутри поста */
+    margin-bottom: 20px;         /* Отступ между постами */
+    background-color: white;     /* Белый фон */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Легкая тень */
+    position: relative;
+}
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.btn-delete:hover { color: #f44336; }
+
+.post-display {
+    padding: 30px;
+    height: 100%;
+    border-right: 1px solid #dee2e6;
+}
+
+.post-title {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.post-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.post-form-container {
+    padding: 30px;
+    height: 100%;
+}
+
+.post-form {
+    padding: 25px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #212529;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .post-display {
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+}

@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Правило для URL с ID (например: /api/posts/123)
+    RewriteRule ^api/([a-z]+)/(\d+)$ api/routes.php?endpoint=$1&id=$2 [L,QSA]
+    
+    # Правило для обычных URL (например: /api/posts)
+    RewriteRule ^api/([a-z]+)$ api/routes.php?endpoint=$1 [L,QSA]
+    
+    # Стандартные исключения
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+</IfModule>
