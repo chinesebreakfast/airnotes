@@ -37,7 +37,8 @@ git clone https://github.com/chinesebreakfast/airnotes.git
 http://domain/api
 
 ### Получить все заметки
-Запрос: ```GET /posts```
+Запрос: 
+```GET /posts```
 Ответ:
 ```
 {
@@ -53,29 +54,39 @@ http://domain/api
 ```
 ### Создание заметки
 
-Запрос: POST /posts
+Запрос: 
+```POST /posts```
 Headers:
+```
   Content-Type: application/json
+```
 
 Request Body:
+```
 {
   "label": "New note",
   "text": "Note content"
 }
+```
 Ответ:
+```
 {
   "status": "success",
   "id": 2
 }
+```
 
 Ошибки: 400 - пустой заголовок, 500 - ошибка сервера
 
 ### Удаление заметки
 
-Запрос: DELETE /posts/{id}
+Запрос: 
+```DELETE /posts/{id}```
 Ответ:
+```
 {
   "status": "success"
 }
+```
 
 Ошибки: 404 - заметка не найдена, 500 - ошибка сервера
