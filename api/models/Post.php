@@ -26,13 +26,14 @@ class Post {
         }
     }
 
-    public function create($label, $text) {
+    public function create($label, $text, $userId) {
         try {
             $stmt = $this->db->prepare(
-                "INSERT INTO {$this->table} (label, text) VALUES (:label, :text)"
+                "INSERT INTO {$this->table} (label, text, user_id) VALUES (:label, :text, :user_id)"
             );
             $stmt->bindParam(':label', $label, PDO::PARAM_STR);
             $stmt->bindParam(':text', $text, PDO::PARAM_STR);
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             return $this->db->lastInsertId();
         } catch(PDOException $e) {

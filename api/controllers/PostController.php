@@ -28,15 +28,17 @@ class PostController {
         
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $data = json_decode(file_get_contents('php://input'), true);
-                
-                error_log(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-
+                $currentUserid = 1; //TODO: реализовать подрузку из токена
 
                 if(empty($data['label'])) {
                     throw new Exception('Заголовок не может быть пустым');
                 }
 
-                $postId = $this->model->create($data['label'], $data['text']);
+                $postId = $this->model->create(
+                    $data['label'],
+                    $data['text'],
+                    $currentUserid
+                );
 
                 echo json_encode([
                     'status' => 'success',
