@@ -1,18 +1,145 @@
+/* Основные стили */
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Светлый фон страницы */
 }
 
-.post {
-    border: 1px solid #e0e0e0;    /* Тонкая серая обводка */
-    border-radius: 12px;          /* Закругление углов */
-    padding: 20px;               /* Отступы внутри поста */
-    margin-bottom: 20px;         /* Отступ между постами */
-    background-color: white;     /* Белый фон */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Легкая тень */
+/* Подключение шрифта Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* Навбар */
+.navbar {
+    background-color: #ffffff !important; /* Белый фон навбара */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 1rem;
     position: relative;
+}
+
+.navbar .container-fluid {
+    justify-content: center;
+    position: relative;
+    min-height: 50px;
+}
+
+/* Контейнер поиска */
+.search-container {
+    width: 220px; /* Уменьшенная ширина */
+    margin: 0 auto;
+}
+
+.search-form {
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%; /* Сдвигаем на 50% вправо */
+    transform: translateX(-50%); /* Корректировка на половину своей ширины */
+    width: auto;
+}
+
+/* Поле ввода */
+.search-input {
+    border-radius: 24px;
+    border: 1px solid #e0e0e0;
+    padding: 6px 40px 6px 15px; /* Увеличиваем правый отступ для кнопки */
+    font-size: 0.85rem;
+    height: 36px;
+    width: 100%; /* Занимает всю ширину контейнера */
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.search-input:focus {
+    border-color: #b0b0b0;
+    box-shadow: none;
+}
+
+/* Кнопка поиска */
+.search-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #555;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    color: #000;
+}
+
+/* Форма создания постов */
+.post-form-container {
+    padding: 30px;
+    height: 100%;
+    background-color: #ffffff; /* Белый фон */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.post-form {
+    padding: 25px;
+}
+
+/* Кнопка публикации */
+.btn {
+    background-color: #e0e0e0; /* Светлая кнопка */
+    border: 1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: #333 !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d0d0d0;
+}
+
+/* Посты */
+.post {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* Белый фон постов */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .post-display {
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .search-container {
+        width: 180px;
+    }
+    .search-form {
+        position: static;
+        transform: none;
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Дополнительные элементы */
+.post-title {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 500; /* Полужирный Roboto */
+}
+
+.post-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300; /* Легкий Roboto */
 }
 
 .post-actions {
@@ -25,48 +152,9 @@ body, html {
     cursor: pointer;
     margin-right: 10px;
     padding: 5px;
+    color: #555;
 }
 
-.btn-delete:hover { color: #f44336; }
-
-.post-display {
-    padding: 30px;
-    height: 100%;
-    border-right: 1px solid #dee2e6;
-}
-
-.post-title {
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.post-body {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.post-form-container {
-    padding: 30px;
-    height: 100%;
-}
-
-.post-form {
-    padding: 25px;
-}
-
-.form-control {
-    border: 1px solid #ced4da;
-}
-
-.form-control:focus {
-    border-color: #212529;
-    box-shadow: none;
-}
-
-@media (max-width: 768px) {
-    .post-display {
-        border-right: none;
-        border-bottom: 1px solid #dee2e6;
-    }
+.btn-delete:hover {
+    color: #f44336;
 }
