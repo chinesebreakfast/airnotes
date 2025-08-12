@@ -30,14 +30,16 @@ AirNotes - это простое REST API приложение для созда
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/chinesebreakfast/airnotes.git
+```
 
 ## 📡 API Documentation
 ### Base URL
 http://domain/api
 
 ### Получить все заметки
-Запрос: GET /posts
+Запрос: ```GET /posts```
 Ответ:
+```
 {
   "status": "success",
   "data": [
@@ -48,7 +50,7 @@ http://domain/api
     }
   ]
 }
-
+```
 ### Создание заметки
 
 Запрос: POST /posts
