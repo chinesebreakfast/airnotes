@@ -34,7 +34,7 @@ git clone https://github.com/chinesebreakfast/airnotes.git
 
 ## 📡 API Documentation
 ### Base URL
-http://domain/api
+http://airnote/api
 
 ### Получить все заметки
 Запрос: 
